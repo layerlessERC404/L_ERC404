@@ -10,7 +10,7 @@ import {ERC404} from "./ERC404.sol";
 contract LayerlessSideChain is ERC404, OApp {
     using OptionsBuilder for bytes;
 
-    string memory private _tokenURI;
+    string  private _tokenURI;
 
     event MessageSent(address src,bytes32 to,uint256 amount );
     constructor(address _endpoint,
@@ -23,7 +23,7 @@ contract LayerlessSideChain is ERC404, OApp {
     }
 
 
-  function tokenURI(uint256 id_) public pure override returns (string memory) {
+  function tokenURI(uint256 id_) public view override returns (string memory) {
     return _tokenURI;
   }
 
